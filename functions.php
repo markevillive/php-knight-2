@@ -6,7 +6,6 @@
  *
  * @package php_knight
  */
-
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -141,13 +140,25 @@ add_action( 'widgets_init', 'php_knight_widgets_init' );
  */
 function php_knight_scripts() {
 	wp_enqueue_style( 'php-knight-style', get_stylesheet_uri(), array(), _S_VERSION );
+    wp_enqueue_style( 'php-knight-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css');
+    wp_enqueue_style( 'php-knight-fontawesome-css', 'https://use.fontawesome.com/releases/v5.7.0/css/all.css' );
+    wp_enqueue_style( 'php-knight-baguetteBox-css', get_template_directory_uri() . '/assets/css/baguetteBox.css' );
+    wp_enqueue_style( 'php-knight-style-css', get_template_directory_uri() . '/assets/css/style.css' );
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.js');
+    wp_enqueue_script( 'jquery' );
+
+    wp_enqueue_script( 'php-knight-popper-js', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', array(), '', true );
+    wp_enqueue_script( 'php-knight-bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js', array(), '', true );
+    wp_enqueue_script( 'php-knight-baguetteBox-js', get_template_directory_uri() . '/assets/js/baguetteBox.min.js', array(), '', true );
+    wp_enqueue_script( 'php-knight-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '', true );
+    wp_enqueue_script( 'php-knight-phone-js', get_template_directory_uri() . '/assets/js/phone.js', array(), '', true );
+
+
+
 	wp_style_add_data( 'php-knight-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'php-knight-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'php_knight_scripts' );
 
