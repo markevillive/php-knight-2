@@ -248,9 +248,9 @@ font-weight: normal;
     text-transform: uppercase;
     transition: all .5s;
 }
-.section-gallery .nav-pills .nav-link:hover{
-    color: #fff;
-    background-color: #ff0000;
+.section-gallery .nav-pills .nav-item .nav-link:hover{
+    color: #ff0000;
+    background-color: #fff;
 }
 .section-gallery .nav-pills .nav-item .nav-link.active{
     color: #ff0000;
@@ -261,6 +261,7 @@ font-weight: normal;
     color: #fff;
     background-color: #ff0000;
 }
+
 
 
 /*====================================================SECTION BLOG=======================================*/
