@@ -93,8 +93,8 @@ if ( ! function_exists( 'php_knight_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 192,
+				'width'       => 222,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
@@ -189,3 +189,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**CUSTOM CODE */
+
+
+function php_knight_debug($data){
+    echo '<pre>'. print_r($data,) .'</pre>';
+}

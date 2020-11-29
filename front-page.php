@@ -21,6 +21,7 @@
 
     <?php wp_head() ?>
 </head>
+<?php php_knight_debug($custom_logo)?>
 <body>
 <div class="preloader d-flex justify-content-center align-items-center"><!---PRELOADER--->
     <div class="spinner-border text-danger" style="width: 10rem; height: 10rem; color: #ff0000" role="status">
@@ -31,8 +32,12 @@
 <header class="main-header">
 
     <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#">
-            <img src="<?php bloginfo('template_url') ?>/assets/img/logo.png" alt="logo">Php<span>Knight</span></a>
+        <a class="navbar-brand" href="<?php echo home_url('/')?>">
+            <?php $custom_logo = wp_get_attachment_image_src( get_theme_mod('custom_logo') ); if($custom_logo): ?>
+                <img src="<?php echo $custom_logo[0] ?>" alt="<?php bloginfo('name') ?>">
+            <?php endif; ?>
+            <?php bloginfo('name') ?>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
@@ -73,6 +78,7 @@
                     <div class="main-header-text-content">
 
                         <p>
+                            <?php php_knight_debug($custom_logo)?>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor consequat augue, nec viverra sem ultricies vel. Nulla luctus efficitur egestas. Vestibulum venenatis ligula nec.
                         </p>
                         <div class="main-header-button-group">

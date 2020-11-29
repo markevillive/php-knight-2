@@ -111,8 +111,8 @@ font-weight: normal;
 
 }
 .main-header .navbar-brand img{
-   height: 20%;
-    width: 20%;
+   height: 100%;
+    width: 100%;
 }
 .main-header .navbar-brand span{
     color: #ff0000;
