@@ -49,7 +49,7 @@ if ( ! function_exists( 'php_knight_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'php-knight' ),
+				'header_menu' => esc_html__( 'Header menu', 'php-knight' ),
 			)
 		);
 
@@ -94,7 +94,7 @@ if ( ! function_exists( 'php_knight_setup' ) ) :
 			'custom-logo',
 			array(
 				'height'      => 192,
-				'width'       => 222,
+				'width'       => 218,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)

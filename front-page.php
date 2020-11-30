@@ -21,7 +21,7 @@
 
     <?php wp_head() ?>
 </head>
-<?php php_knight_debug($custom_logo)?>
+
 <body>
 <div class="preloader d-flex justify-content-center align-items-center"><!---PRELOADER--->
     <div class="spinner-border text-danger" style="width: 10rem; height: 10rem; color: #ff0000" role="status">
@@ -43,7 +43,15 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'header_menu',
+                'container' => false,
+                'menu_class' => 'navbar-nav ml-auto',
+            ) )
+
+            ?>
+            <!--<ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -62,7 +70,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services <span class="sr-only">(current)</span></a>
                 </li>
-            </ul>
+            </ul>-->
 
         </div>
     </nav>
